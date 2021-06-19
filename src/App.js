@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import LeftPanel from './components/leftpanel/LeftPanel';
+import RightPanel from './components/rightpanel/RightPanel';
+import { Grid, Divider } from '@material-ui/core';
+import Header from './components/header/Header';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Grid container>
+        <Grid item md={4}>
+          <LeftPanel />
+        </Grid>
+        {/* <Divider orientation="vertical" variant="fullWidth" flexItem/> */}
+        <Grid item md={8}>
+          <RightPanel />
+        </Grid>
+      </Grid>
     </div>
   );
 }
