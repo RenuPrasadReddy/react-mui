@@ -1,5 +1,5 @@
 let initialState = {
-    mode: 'light'
+    mode: false
 }
 
 const toggleReducer = (state=initialState, action) => {

@@ -1,7 +1,7 @@
 import './App.css';
 import LeftPanel from './components/leftpanel/LeftPanel';
 import RightPanel from './components/rightpanel/RightPanel';
-import { Grid, Divider,Paper } from '@material-ui/core';
+import { Grid, Divider,Paper, CssBaseline  } from '@material-ui/core';
 import Header from './components/header/Header';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux';
@@ -21,6 +21,7 @@ function App() {
   return (
 
     <ThemeProvider theme={theme}>
+       <CssBaseline />
       <Paper style={{height: "100vh"}}>
         <Header />
         <Grid container>
