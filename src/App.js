@@ -1,40 +1,37 @@
-import './App.css';
-import LeftPanel from './components/leftpanel/LeftPanel';
-import RightPanel from './components/rightpanel/RightPanel';
-import { Grid, Divider,Paper } from '@material-ui/core';
-import Header from './components/header/Header';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {useSelector} from 'react-redux';
-// import { useSelector, useDispatch } from 'react-redux';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import React, { useState } from "react";
+import Switch from "@material-ui/core/Switch";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
+export default function Dashboard() {
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
 
-function App() {
-
-  const darkMode = useSelector(state => state.sampleReducer.mode);
-
-  const theme = createMuiTheme({
+  const darkTheme = createMuiTheme({
     palette: {
-      type: darkMode ? 'dark' : "light"
+      type: palletType
     }
-  })
+  });
+
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
 
   return (
-
-    <ThemeProvider theme={theme}>
-      <Paper style={{height: "100vh"}}>
-        <Header />
-        <Grid container>
-          <Grid item md={4}>
-            <LeftPanel />
-          </Grid>
-          {/* <Divider orientation="vertical" variant="fullWidth" flexItem/> */}
-          <Grid item md={8}>
-            <RightPanel />
-          </Grid>
-        </Grid>
-      </Paper>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <FormControlLabel
+        control={
+          <Switch
+            checked={darkState}
+            onChange={handleThemeChange}
+            name="Toggle Theme"
+          />
+        }
+        label="Toggle Theme"
+      />
+      <h1 style={{textAlign:'center'}}> Hello World </h1>
     </ThemeProvider>
   );
 }
-
-export default App;
