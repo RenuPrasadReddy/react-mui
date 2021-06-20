@@ -2,7 +2,7 @@ let initialState = {
     mode: 'light'
 }
 
-const sampleReducer = (state=initialState, action) => {
+const toggleReducer = (state=initialState, action) => {
     switch(action.type) {
         case 'TOGGLE_SWITCH':
             console.log("in toggle switch");
@@ -15,4 +15,4 @@ const sampleReducer = (state=initialState, action) => {
     }
 }
 
-export default sampleReducer;
+export default toggleReducer;

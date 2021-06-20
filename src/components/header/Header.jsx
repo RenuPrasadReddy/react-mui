@@ -20,7 +20,7 @@ const useStyles = makeStyles( theme => ({
 
 function Header() {
     // const [darkMode, setDarkMode] = useState(false);
-    const mode = useSelector(state => state.sampleReducer.mode);
+    const mode = useSelector(state => state.toggleReducer.mode);
     // const state1 = useSelector(state => state);
     const classes = useStyles();
     const dispatch = useDispatch();

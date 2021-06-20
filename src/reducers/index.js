@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import sampleReducer from './Reducers';
+import toggleReducer from './Reducers';
 
 // export default combineReducers({
 //     sampleReducer
 // });
 
 let rootReducer = combineReducers({
-    sampleReducer
+    toggleReducer
 });
 
 export default rootReducer;

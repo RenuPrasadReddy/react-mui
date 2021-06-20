@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 
 function App() {
 
-  const darkMode = useSelector(state => state.sampleReducer.mode);
+  const darkMode = useSelector(state => state.toggleReducer.mode);
 
   const theme = createMuiTheme({
     palette: {
